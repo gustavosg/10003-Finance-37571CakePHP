@@ -22,9 +22,9 @@ $cakeDescription = __d('cake_dev', 'CakePHP: the rapid development php framework
 <html xmlns="http://www.w3.org/1999/xhtml">
 <head>
 	<?php echo $this->Html->charset(); ?>
-	<title>
-		<?php echo $cakeDescription ?>:
-		<?php echo $title_for_layout; ?>
+	<title> Sistema Finance-37571 com CakePHP
+            <?php // echo $cakeDescription ?>:
+            <?php // echo $title_for_layout; ?>
 	</title>
 	<?php
 		echo $this->Html->meta('icon');
@@ -48,11 +48,21 @@ $cakeDescription = __d('cake_dev', 'CakePHP: the rapid development php framework
 			<?php echo $this->fetch('content'); ?>
 		</div>
 		<div id="footer">
-			<?php echo $this->Html->link(
-					$this->Html->image('cake.power.gif', array('alt' => $cakeDescription, 'border' => '0')),
-					'http://www.cakephp.org/',
-					array('target' => '_blank', 'escape' => false)
-				);
+                    
+                    <?php
+                    echo "<footer style='position: fixed; right: 3px; bottom: 0px;'>
+			Gustavo Souza Gonçalves - 37571 <br> Marco Aurélio D. Acaroni - 38441 <br>
+			PUC Minas - 2011-2012
+			</footer>";
+                    
+                    ?>
+                    
+			<?php 
+//                        echo $this->Html->link(
+//					$this->Html->image('cake.power.gif', array('alt' => $cakeDescription, 'border' => '0')),
+//					'http://www.cakephp.org/',
+//					array('target' => '_blank', 'escape' => false)
+//				);
 			?>
 		</div>
 	</div>
