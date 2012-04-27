@@ -37,12 +37,12 @@
                 <td>Data de Modificação:</td>
 
             </tr>
-            <?php foreach ($Categories as $category): ?>
+            <?php foreach ($Categories as $Category): ?>
                 <tr>
-                    <td><?php echo $category['Category']['id']; ?></td>
-                    <td><?php echo $this->Html->link($category['Category']['name'], array('controller' => 'Categories', 'action' => 'find', $category['Category']['id'])); ?></td>
-                    <td><?php echo $category['Category']['created']; ?></td>
-                    <td><?php echo $category['Category']['modified']; ?></td>
+                    <td><?php echo $Category['Category']['id']; ?></td>
+                    <td><?php echo $this->Html->link($Category['Category']['name'], array('controller' => 'categories', 'action' => 'find', $Category['Category']['id'])); ?></td>
+                    <td><?php echo $Category['Category']['created']; ?></td>
+                    <td><?php echo $Category['Category']['modified']; ?></td>
                 </tr>
             <?php endforeach; ?>
         </table>

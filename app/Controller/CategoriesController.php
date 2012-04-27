@@ -1,4 +1,5 @@
 <?php
+
 /**
  * Description of CategoriesController
  *
@@ -41,7 +42,7 @@ class CategoriesController extends AppController {
     }
 
     /**
-     *Remove categoria
+     * Remove categoria
      * @param type $id 
      */
     public function delete($id = null) {
@@ -50,7 +51,7 @@ class CategoriesController extends AppController {
             $this->request->data = $this->Category->read();
         } else {
             if ($this->Category->delete($id)) {
-                $this->Session->setFlash('Sua categoria de id: '. $id .' foi removida.');
+                $this->Session->setFlash('Sua categoria de id: ' . $id . ' foi removida.');
                 $this->redirect(array('action' => 'index'));
             }
         }
@@ -68,14 +69,14 @@ class CategoriesController extends AppController {
      * @param type $id 
      */
     public function find($id = null) {
-        if ($this->request->is('post')) {
-            $this->Category->id = $id;
-            $this->set('Categories', $this->Category->read());
-        }
+        $this->Category->id = $id;
+        $this->set('Category', $this->Category->read());
     }
 
     public function index() {
         $this->set('Categories', $this->Category->find('all'));
     }
+
 }
+
 ?>

@@ -42,7 +42,7 @@ class AccountsController extends AppController {
     }
 
     /**
-     *Remove Conta
+     * Remove Conta
      * @param type $id 
      */
     public function delete($id = null) {
@@ -51,7 +51,7 @@ class AccountsController extends AppController {
             $this->request->data = $this->Account->read();
         } else {
             if ($this->Account->delete($id)) {
-                $this->Session->setFlash('Sua conta de id: '. $id .' foi removida.');
+                $this->Session->setFlash('Sua conta de id: ' . $id . ' foi removida.');
                 $this->redirect(array('action' => 'index'));
             }
         }
@@ -69,14 +69,14 @@ class AccountsController extends AppController {
      * @param type $id 
      */
     public function find($id = null) {
-        if ($this->request->is('post')) {
-            $this->Account->id = $id;
-            $this->set('Account', $this->Account->read());
-        }
+        $this->Account->id = $id;
+        $this->set('Account', $this->Account->read());
     }
 
     public function index() {
         $this->set('Account', $this->Account->find('all'));
     }
+
 }
+
 ?>
