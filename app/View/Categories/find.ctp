@@ -8,7 +8,7 @@
  * DADOS DA APLICAÇÃO
  * ------------------------------------------------------------------------------------------------------------------------
  * Nome:        Report
- * Descrição:   Responsável pelo retorno e gravação de dados no Banco de Dados, tabela Account
+ * Descrição:   Responsável pelo retorno e gravação de dados no Banco de Dados, tabela Category
  * ------------------------------------------------------------------------------------------------------------------------
  * DADOS DO ARQUIVO
  * ------------------------------------------------------------------------------------------------------------------------
@@ -23,7 +23,7 @@
 
 <body>
 
-    <form method="post" name="AccountFind" action="../find/">
+    <form method="post" name="CategoryFind" action="../find/">
         <h1 align="center">Dados da Conta:</h1>
 
         <?php
@@ -38,10 +38,10 @@
                 <td>Data de Modificação:</td>
             </tr>
             <tr>
-                <td><?php echo $Account['Account']['id']; ?></td>
-                <td><?php echo $this->Html->link($Account['Account']['name'], array('controller' => 'accounts', 'action' => 'find', $Account['Account']['id'])); ?></td>
-                <td><?php echo $Account['Account']['created']; ?></td>
-                <td><?php echo $Account['Account']['modified']; ?></td>
+                <td><?php echo $Category['Category']['id']; ?></td>
+                <td><?php echo $this->Html->link($Category['Category']['name'], array('controller' => 'accounts', 'action' => 'find', $Category['Category']['id'])); ?></td>
+                <td><?php echo $Category['Category']['created']; ?></td>
+                <td><?php echo $Category['Category']['modified']; ?></td>
             </tr>
         </table>
     </form>

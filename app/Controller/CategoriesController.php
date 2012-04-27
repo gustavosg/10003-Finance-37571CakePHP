@@ -1,57 +1,56 @@
 <?php
-
 /**
- * Description of AccountsController
+ * Description of CategoriesController
  *
  * @author Gustavo Souza Gonçalves
  */
-class AccountsController extends AppController {
+class CategoriesController extends AppController {
 
     public $helpers = array('Html', 'Form');
-    public $name = 'Accounts';
+    public $name = 'Categories';
     public $components = array('Session');
 
     // TODO Gustavo: Como salvar campo modified = null
 
     /**
-     * Adiciona nova conta 
+     * Adiciona nova categoria 
      */
     public function add() {
         if ($this->request->is('post')) {
-            if ($this->Account->save($this->request->data)) {
-                $this->Session->setFlash('Sua conta foi gravada.');
+            if ($this->Category->save($this->request->data)) {
+                $this->Session->setFlash('Sua categoria foi gravada.');
                 $this->redirect(array('action' => 'index'));
             }
         }
     }
 
     /**
-     * Edição de Conta
+     * Edição de categoria
      * @param type $id 
      */
     public function edit($id = null) {
-        $this->Account->id = $id;
+        $this->Category->id = $id;
         if ($this->request->is('post')) {
-            $this->request->data = $this->Account->read();
+            $this->request->data = $this->Category->read();
         } else {
-            if ($this->Account->save($this->request->data)) {
-                $this->Session->setFlash('Sua conta foi atualizada.');
+            if ($this->Category->save($this->request->data)) {
+                $this->Session->setFlash('Sua categoria foi atualizada.');
                 $this->redirect(array('action' => 'index'));
             }
         }
     }
 
     /**
-     *Remove Conta
+     *Remove categoria
      * @param type $id 
      */
     public function delete($id = null) {
-        $this->Account->id = $id;
+        $this->Category->id = $id;
         if ($this->request->is('post')) {
-            $this->request->data = $this->Account->read();
+            $this->request->data = $this->Category->read();
         } else {
-            if ($this->Account->delete($id)) {
-                $this->Session->setFlash('Sua conta de id: '. $id .' foi removida.');
+            if ($this->Category->delete($id)) {
+                $this->Session->setFlash('Sua categoria de id: '. $id .' foi removida.');
                 $this->redirect(array('action' => 'index'));
             }
         }
@@ -61,22 +60,22 @@ class AccountsController extends AppController {
      * Geração de relatório 
      */
     public function report() {
-        $this->set('Accounts', $this->Account->find('all'));
+        $this->set('Categories', $this->Category->find('all'));
     }
 
     /**
-     * Busca uma Account
+     * Busca uma Categorie
      * @param type $id 
      */
     public function find($id = null) {
         if ($this->request->is('post')) {
-            $this->Account->id = $id;
-            $this->set('Account', $this->Account->read());
+            $this->Category->id = $id;
+            $this->set('Categories', $this->Category->read());
         }
     }
 
     public function index() {
-        $this->set('Account', $this->Account->find('all'));
+        $this->set('Categories', $this->Category->find('all'));
     }
 }
 ?>

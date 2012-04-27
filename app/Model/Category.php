@@ -6,13 +6,13 @@
  */
 
 /**
- * Description of Account
+ * Description of Categorie
  *
  * @author Gustavo Souza Gonçalves
  */
-class Account extends AppModel{
+class Category extends AppModel{
     //put your code here
-    public $name = 'Account';
+    public $name = 'Category';
 }
 
 ?>
