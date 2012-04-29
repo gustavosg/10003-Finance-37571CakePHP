@@ -6,56 +6,56 @@
  */
 
 /**
- * Description of SubSubCategoriesController
+ * Description of ExpendituresController
  *
  * @author Gustavo Souza Gonçalves
  */
-class SubCategoriesController extends AppController{
+class ExpendituresController extends AppController{
     public $helpers = array('Html', 'Form');
-    public $name = 'SubCategories';
+    public $name = 'Expenditures';
     public $components = array('Session');
 
     // TODO Gustavo: Como salvar campo modified = null
 
     /**
-     * Adiciona nova SubCategoria 
+     * Adiciona nova Expendituria 
      */
     public function add() {
         if ($this->request->is('post')) {
-            if ($this->SubCategory->save($this->request->data)) {
-                $this->Session->setFlash('Sua SubCategoria foi gravada.');
+            if ($this->Expenditure->save($this->request->data)) {
+                $this->Session->setFlash('Sua despesa foi gravada.');
                 $this->redirect(array('action' => 'index'));
             }
         }
     }
 
     /**
-     * Edição de SubCategoria
+     * Edição de Expendituria
      * @param type $id 
      */
     public function edit($id = null) {
-        $this->SubCategory->id = $id;
+        $this->Expenditure->id = $id;
         if ($this->request->is('post')) {
-            $this->request->data = $this->SubCategory->read();
+            $this->request->data = $this->Expenditure->read();
         } else {
-            if ($this->SubCategory->save($this->request->data)) {
-                $this->Session->setFlash('Sua SubCategoria foi atualizada.');
+            if ($this->Expenditure->save($this->request->data)) {
+                $this->Session->setFlash('Sua Despesa foi atualizada.');
                 $this->redirect(array('action' => 'index'));
             }
         }
     }
 
     /**
-     * Remove SubCategoria
+     * Remove Expendituria
      * @param type $id 
      */
     public function delete($id = null) {
-        $this->SubCategory->id = $id;
+        $this->Expenditure->id = $id;
         if ($this->request->is('post')) {
-            $this->request->data = $this->SubCategory->read();
+            $this->request->data = $this->Expenditure->read();
         } else {
-            if ($this->SubCategory->delete($id)) {
-                $this->Session->setFlash('Sua SubCategoria de id: ' . $id . ' foi removida.');
+            if ($this->Expenditure->delete($id)) {
+                $this->Session->setFlash('Sua Despesa de id: ' . $id . ' foi removida.');
                 $this->redirect(array('action' => 'index'));
             }
         }
@@ -65,22 +65,21 @@ class SubCategoriesController extends AppController{
      * Geração de relatório 
      */
     public function report() {
-        $this->set('SubCategories', $this->SubCategory->find('all'));
+        $this->set('Expenditures', $this->Expenditure->find('all'));
     }
 
     /**
-     * Busca uma SubCategorie
+     * Busca uma Expenditurie
      * @param type $id 
      */
     public function find($id = null) {
-        $this->SubCategory->id = $id;
-        $this->set('SubCategory', $this->SubCategory->read());
+        $this->Expenditure->id = $id;
+        $this->set('Expenditures', $this->Expenditure->read());
     }
 
     public function index() {
-        $this->set('SubCategories', $this->SubCategory->find('all'));
+        $this->set('Expenditures', $this->Expenditure->find('all'));
     }
-
 }
 
 ?>

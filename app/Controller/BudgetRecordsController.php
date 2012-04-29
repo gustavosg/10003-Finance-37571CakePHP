@@ -6,13 +6,13 @@
  */
 
 /**
- * Description of SubSubCategoriesController
+ * Description of BudgetRecordRecordsController
  *
  * @author Gustavo Souza Gonçalves
  */
-class SubCategoriesController extends AppController{
+class BudgetRecordsController extends AppController{
     public $helpers = array('Html', 'Form');
-    public $name = 'SubCategories';
+    public $name = 'BudgetRecords';
     public $components = array('Session');
 
     // TODO Gustavo: Como salvar campo modified = null
@@ -22,8 +22,8 @@ class SubCategoriesController extends AppController{
      */
     public function add() {
         if ($this->request->is('post')) {
-            if ($this->SubCategory->save($this->request->data)) {
-                $this->Session->setFlash('Sua SubCategoria foi gravada.');
+            if ($this->BudgetRecord->save($this->request->data)) {
+                $this->Session->setFlash('Seu orçamento foi gravada.');
                 $this->redirect(array('action' => 'index'));
             }
         }
@@ -34,11 +34,11 @@ class SubCategoriesController extends AppController{
      * @param type $id 
      */
     public function edit($id = null) {
-        $this->SubCategory->id = $id;
+        $this->BudgetRecord->id = $id;
         if ($this->request->is('post')) {
-            $this->request->data = $this->SubCategory->read();
+            $this->request->data = $this->BudgetRecord->read();
         } else {
-            if ($this->SubCategory->save($this->request->data)) {
+            if ($this->BudgetRecord->save($this->request->data)) {
                 $this->Session->setFlash('Sua SubCategoria foi atualizada.');
                 $this->redirect(array('action' => 'index'));
             }
@@ -50,11 +50,11 @@ class SubCategoriesController extends AppController{
      * @param type $id 
      */
     public function delete($id = null) {
-        $this->SubCategory->id = $id;
+        $this->BudgetRecord->id = $id;
         if ($this->request->is('post')) {
-            $this->request->data = $this->SubCategory->read();
+            $this->request->data = $this->BudgetRecord->read();
         } else {
-            if ($this->SubCategory->delete($id)) {
+            if ($this->BudgetRecord->delete($id)) {
                 $this->Session->setFlash('Sua SubCategoria de id: ' . $id . ' foi removida.');
                 $this->redirect(array('action' => 'index'));
             }
@@ -65,7 +65,7 @@ class SubCategoriesController extends AppController{
      * Geração de relatório 
      */
     public function report() {
-        $this->set('SubCategories', $this->SubCategory->find('all'));
+        $this->set('BudgetRecords', $this->BudgetRecord->find('all'));
     }
 
     /**
@@ -73,14 +73,13 @@ class SubCategoriesController extends AppController{
      * @param type $id 
      */
     public function find($id = null) {
-        $this->SubCategory->id = $id;
-        $this->set('SubCategory', $this->SubCategory->read());
+        $this->BudgetRecord->id = $id;
+        $this->set('BudgetRecord', $this->BudgetRecord->read());
     }
 
     public function index() {
-        $this->set('SubCategories', $this->SubCategory->find('all'));
+        $this->set('BudgetRecords', $this->BudgetRecord->find('all'));
     }
-
 }
 
 ?>

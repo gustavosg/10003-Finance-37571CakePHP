@@ -8,7 +8,7 @@
  * DADOS DA APLICAÇÃO
  * ------------------------------------------------------------------------------------------------------------------------
  * Nome:        Report
- * Descrição:   Responsável pelo retorno e gravação de dados no Banco de Dados, tabela Categorie
+ * Descrição:   Responsável pelo retorno e gravação de dados no Banco de Dados, tabela SubCategorie
  * ------------------------------------------------------------------------------------------------------------------------
  * DADOS DO ARQUIVO
  * ------------------------------------------------------------------------------------------------------------------------
@@ -28,7 +28,7 @@
     </head>
     <body>
 
-        <h1 align="center">Categorias Cadastradas:</h1>
+        <h1 align="center">SubCategorias Cadastradas:</h1>
         <table>
             <tr>
                 <td>id</td>
@@ -37,12 +37,12 @@
                 <td>Data de Modificação:</td>
 
             </tr>
-            <?php foreach ($Categories as $Category): ?>
+            <?php foreach ($SubCategories as $SubCategory): ?>
                 <tr>
-                    <td><?php echo $Category['Category']['id']; ?></td>
-                    <td><?php echo $this->Html->link($Category['Category']['name'], array('controller' => 'categories', 'action' => 'find', $Category['Category']['id'])); ?></td>
-                    <td><?php echo $Category['Category']['created']; ?></td>
-                    <td><?php echo $Category['Category']['modified']; ?></td>
+                    <td><?php echo $SubCategory['SubCategory']['id']; ?></td>
+                    <td><?php echo $this->Html->link($SubCategory['SubCategory']['name'], array('controller' => 'SubCategories', 'action' => 'find', $SubCategory['SubCategory']['id'])); ?></td>
+                    <td><?php echo $SubCategory['SubCategory']['created']; ?></td>
+                    <td><?php echo $SubCategory['SubCategory']['modified']; ?></td>
                 </tr>
             <?php endforeach; ?>
         </table>

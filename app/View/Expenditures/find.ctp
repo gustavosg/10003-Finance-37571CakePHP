@@ -8,7 +8,7 @@
  * DADOS DA APLICAÇÃO
  * ------------------------------------------------------------------------------------------------------------------------
  * Nome:        Report
- * Descrição:   Responsável pelo retorno e gravação de dados no Banco de Dados, tabela Budget
+ * Descrição:   Responsável pelo retorno e gravação de dados no Banco de Dados, tabela Expenditure
  * ------------------------------------------------------------------------------------------------------------------------
  * DADOS DO ARQUIVO
  * ------------------------------------------------------------------------------------------------------------------------
@@ -23,7 +23,7 @@
 
 <body>
 
-    <form method="post" name="BudgetFind" action="../find/">
+    <form method="post" name="ExpenditureFind" action="../find/">
         <h1 align="center">Dados da Conta:</h1>
 
         <?php
@@ -38,10 +38,10 @@
                 <td>Data de Modificação:</td>
             </tr>
             <tr>
-                <td><?php echo $Budget['Budget']['id']; ?></td>
-                <td><?php echo $this->Html->link($Budget['Budget']['name'], array('controller' => 'accounts', 'action' => 'find', $Budget['Budget']['id'])); ?></td>
-                <td><?php echo $Budget['Budget']['created']; ?></td>
-                <td><?php echo $Budget['Budget']['modified']; ?></td>
+                <td><?php echo $Expenditures['Expenditure']['id']; ?></td>
+                <td><?php echo $this->Html->link($Expenditures['Expenditure']['name'], array('controller' => 'accounts', 'action' => 'find', $Expenditures['Expenditure']['id'])); ?></td>
+                <td><?php echo $Expenditures['Expenditure']['created']; ?></td>
+                <td><?php echo $Expenditures['Expenditure']['modified']; ?></td>
             </tr>
         </table>
     </form>
