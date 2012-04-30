@@ -15,12 +15,12 @@ class Expenditure extends AppModel {
     // Define tabela a ser usada:
     public $useTable = 'Expenditure';
     public $name = 'Expenditure';
-    public $hasOne = array(
+    public $hasMany = array(
         'Account' => array(
             'className' => 'Account',
-            'conditions' => array('accounts.id' => '1'),
+            'conditions' => array('account.id' => '') ,
             'fields' => array('Account' => 'name'),
-            'dependent' => false,
+            'dependent' => true,
             'foreignKey' => 'account_id'
         ),
         'SubCategory' => array(
@@ -31,7 +31,6 @@ class Expenditure extends AppModel {
             'foreignKey' => 'sub_category_id'
         )
     );
-
 }
 
 ?>

@@ -15,7 +15,6 @@ class ExpendituresController extends AppController {
     public $helpers = array('Html', 'Form');
     public $name = 'Expenditures';
     public $components = array('Session');
-    public $Accounts;
 
     // TODO Gustavo: Como salvar campo modified = null
 
@@ -23,7 +22,9 @@ class ExpendituresController extends AppController {
      * Adiciona nova Expendituria 
      */
     public function add() {
-        $Accounts = $this->Expenditure->Account->find('list', array('fields' => array('Account.id', 'Account.Name')));
+
+        $this->set('SubCategory', $this->Expenditure->SubCategory->find('list', array('fields' => array('SubCategory.id', 'SubCategory.Name'))));
+        $this->set('Account', $this->Expenditure->Account->find('list', array('fields' => array('Account.id', 'Account.Name'))));
 
         if ($this->request->is('post')) {
             if ($this->Expenditure->save($this->request->data)) {
@@ -70,6 +71,8 @@ class ExpendituresController extends AppController {
      */
     public function report() {
         $this->set('Expenditures', $this->Expenditure->find('all'));
+        $this->set('SubCategory', $this->Expenditure->SubCategory->find('list', array('fields' => array('SubCategory.id', 'SubCategory.Name'))));
+        $this->set('Account', $this->Expenditure->Account->find('list', array('fields' => array('Account.id', 'Account.Name'))));
     }
 
     /**
@@ -82,7 +85,7 @@ class ExpendituresController extends AppController {
     }
 
     public function index() {
-        $this->set('Expenditures', $this->Expenditure->find('all'));
+
     }
 
 }

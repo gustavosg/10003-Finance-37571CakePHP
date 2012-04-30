@@ -10,7 +10,8 @@
  *
  * @author Gustavo Souza Gonçalves
  */
-class SubCategoriesController extends AppController{
+class SubCategoriesController extends AppController {
+
     public $helpers = array('Html', 'Form');
     public $name = 'SubCategories';
     public $components = array('Session');
@@ -21,8 +22,12 @@ class SubCategoriesController extends AppController{
      * Adiciona nova SubCategoria 
      */
     public function add() {
+        //debug ($this->SubCategory);
+        $this->set('Category', $this->SubCategory->Category->find('list'));
+
         if ($this->request->is('post')) {
-            if ($this->SubCategory->save($this->request->data)) {
+            if (!empty($this->request->data)) {
+                $this->SubCategory->updateAll($this->request->data);
                 $this->Session->setFlash('Sua SubCategoria foi gravada.');
                 $this->redirect(array('action' => 'index'));
             }

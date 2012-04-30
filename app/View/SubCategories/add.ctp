@@ -4,9 +4,9 @@
             <h1 align="center">Entre com as informações:</h1>
             <?php
             echo $this->Form->create('Category');
-            echo $this->Form->input('name');
-            echo $this->Form->input('category_id');
-            echo $this->Form->input('created');
+            echo $this->Form->input('name', array('label'=> 'Nome:'));
+            echo $this->Form->input('category_id', array('options' => $Category, 'class' => 'Category', 'type'=>'select', 'label'=>'Categoria:'));
+            echo $this->Form->input('created', array('label'=> 'Data de Criação:'));
             echo $this->Form->end('Gravar categoria');
             ?>
         </form>

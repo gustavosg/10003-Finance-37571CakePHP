@@ -10,8 +10,18 @@
  *
  * @author Gustavo Souza Gonçalves
  */
-class SubCategory extends AppModel{
+class SubCategory extends AppModel {
+
     //put your code here
+
+    public $hasMany = array(
+        'Category' => array(
+            'className' => 'Category',
+            'conditions' => '',
+            'dependent' => true,
+        )
+    );
+
 }
 
 ?>

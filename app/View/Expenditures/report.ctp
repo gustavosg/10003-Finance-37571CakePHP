@@ -11,7 +11,12 @@
         <?php foreach ($Expenditures as $Expenditure): ?>
             <tr>
                 <td><?php echo $Expenditure['Expenditure']['id']; ?></td>
-                <td><?php echo $this->Html->link($Expenditure['Expenditure']['name'], array('controller' => 'categories', 'action' => 'find', $Expenditure['Expenditure']['id'])); ?></td>
+                <td><?php
+        echo $this->Html->link($Expenditure['Expenditure']['name'], array('controller' => 'categories', 'action' => 'find', $Expenditure['Expenditure']['id']));
+            ?></td>
+                <td><?php echo $Account['Account']['name']; ?> </td>
+
+                <td><?php echo $SubCategory['SubCategory']['name']; ?> </td>
                 <td><?php echo $Expenditure['Expenditure']['created']; ?></td>
                 <td><?php echo $Expenditure['Expenditure']['modified']; ?></td>
             </tr>
