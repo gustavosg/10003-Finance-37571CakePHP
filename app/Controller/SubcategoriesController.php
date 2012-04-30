@@ -22,12 +22,11 @@ class SubCategoriesController extends AppController {
      * Adiciona nova SubCategoria 
      */
     public function add() {
-        //debug ($this->SubCategory);
         $this->set('Category', $this->SubCategory->Category->find('list'));
 
         if ($this->request->is('post')) {
             if (!empty($this->request->data)) {
-                $this->SubCategory->updateAll($this->request->data);
+                $this->SubCategory->save($this->request->data);
                 $this->Session->setFlash('Sua SubCategoria foi gravada.');
                 $this->redirect(array('action' => 'index'));
             }
@@ -39,14 +38,16 @@ class SubCategoriesController extends AppController {
      * @param type $id 
      */
     public function edit($id = null) {
+        $this->set('Category', $this->SubCategory->Category->find('list'));
         $this->SubCategory->id = $id;
-        if ($this->request->is('post')) {
-            $this->request->data = $this->SubCategory->read();
-        } else {
+        
+        if ($this->request->is('post') || $this->request->is('put')) {
             if ($this->SubCategory->save($this->request->data)) {
                 $this->Session->setFlash('Sua SubCategoria foi atualizada.');
                 $this->redirect(array('action' => 'index'));
             }
+        } else {
+            $this->request->data = $this->SubCategory->read(null, $id);
         }
     }
 
@@ -70,6 +71,7 @@ class SubCategoriesController extends AppController {
      * Geração de relatório 
      */
     public function report() {
+        $this->set('Category', $this->SubCategory->Category->find('all'));
         $this->set('SubCategories', $this->SubCategory->find('all'));
     }
 
@@ -83,7 +85,7 @@ class SubCategoriesController extends AppController {
     }
 
     public function index() {
-        $this->set('SubCategories', $this->SubCategory->find('all'));
+        //$this->set('SubCategories', $this->SubCategory->find('all'));
     }
 
 }

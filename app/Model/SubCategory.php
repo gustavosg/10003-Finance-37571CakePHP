@@ -16,9 +16,10 @@ class SubCategory extends AppModel {
 
     public $hasMany = array(
         'Category' => array(
-            'className' => 'Category',
+            'className' => 'Categories',
             'conditions' => '',
             'dependent' => true,
+            'foreignKey' => 'id'
         )
     );
 
