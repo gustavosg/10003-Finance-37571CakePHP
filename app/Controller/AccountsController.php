@@ -31,13 +31,15 @@ class AccountsController extends AppController {
      */
     public function edit($id = null) {
         $this->Account->id = $id;
-        if ($this->request->is('post')) {
-            $this->request->data = $this->Account->read();
-        } else {
+        if ($this->request->is('post') || $this->request->is('put')) {
             if ($this->Account->save($this->request->data)) {
-                $this->Session->setFlash('Sua conta foi atualizada.');
+                $this->Session->setFlash(__('The account has been saved'));
                 $this->redirect(array('action' => 'index'));
+            } else {
+                $this->Session->setFlash(__('The account could not be saved. Please, try again.'));
             }
+        } else {
+            $this->request->data = $this->Account->read(null, $id);
         }
     }
 

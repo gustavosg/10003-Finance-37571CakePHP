@@ -10,10 +10,12 @@
  *
  * @author Gustavo Souza Gonçalves
  */
-class ExpendituresController extends AppController{
+class ExpendituresController extends AppController {
+
     public $helpers = array('Html', 'Form');
     public $name = 'Expenditures';
     public $components = array('Session');
+    public $Accounts;
 
     // TODO Gustavo: Como salvar campo modified = null
 
@@ -21,6 +23,8 @@ class ExpendituresController extends AppController{
      * Adiciona nova Expendituria 
      */
     public function add() {
+        $Accounts = $this->Expenditure->Account->find('list', array('fields' => array('Account.id', 'Account.Name')));
+
         if ($this->request->is('post')) {
             if ($this->Expenditure->save($this->request->data)) {
                 $this->Session->setFlash('Sua despesa foi gravada.');
@@ -80,6 +84,7 @@ class ExpendituresController extends AppController{
     public function index() {
         $this->set('Expenditures', $this->Expenditure->find('all'));
     }
+
 }
 
 ?>

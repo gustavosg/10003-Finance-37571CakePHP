@@ -13,6 +13,7 @@
 class Account extends AppModel{
     //put your code here
     public $name = 'Account';
+    
 }
 
 ?>
