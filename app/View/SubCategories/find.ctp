@@ -34,14 +34,20 @@
             <tr>
                 <td>id</td>
                 <td>Nome:</td>
+                <td>Categoria:</td>
                 <td>Data de Criação:</td>
                 <td>Data de Modificação:</td>
+                <td>Editar:</td>
+                <td>Remover:</td>
             </tr>
             <tr>
-                <td><?php echo $Category['Category']['id']; ?></td>
-                <td><?php echo $this->Html->link($Category['Category']['name'], array('controller' => 'accounts', 'action' => 'find', $Category['Category']['id'])); ?></td>
-                <td><?php echo $Category['Category']['created']; ?></td>
-                <td><?php echo $Category['Category']['modified']; ?></td>
+                <td><?php echo $SubCategory['SubCategory']['id']; ?></td>
+                <td><?php echo $this->Html->link($SubCategory['SubCategory']['name'], array('controller' => 'SubCategories', 'action' => 'find', $SubCategory['SubCategory']['id'])); ?></td>
+                <td><?php echo $SubCategory['SubCategory']['category_id']; ?></td>
+                <td><?php echo $SubCategory['SubCategory']['created']; ?></td>
+                <td><?php echo $SubCategory['SubCategory']['modified']; ?></td>
+                <td><?php echo $this->Html->link('Editar', array('controller' => 'Subcategories', 'action' => 'edit', $SubCategory['SubCategory']['id'])); ?></td>
+                <td><?php echo $this->Html->link('Remover', array('controller' => 'Subcategories', 'action' => 'delete', $SubCategory['SubCategory']['id'])); ?></td>
             </tr>
         </table>
     </form>

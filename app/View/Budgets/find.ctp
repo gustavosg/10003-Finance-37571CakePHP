@@ -36,12 +36,16 @@
                 <td>Nome:</td>
                 <td>Data de Criação:</td>
                 <td>Data de Modificação:</td>
+                <td>Editar:</td>
+                <td>Remover:</td>
             </tr>
             <tr>
                 <td><?php echo $Budget['Budget']['id']; ?></td>
-                <td><?php echo $this->Html->link($Budget['Budget']['name'], array('controller' => 'accounts', 'action' => 'find', $Budget['Budget']['id'])); ?></td>
+                <td><?php echo $this->Html->link($Budget['Budget']['name'], array('controller' => 'budgets', 'action' => 'find', $Budget['Budget']['id'])); ?></td>
                 <td><?php echo $Budget['Budget']['created']; ?></td>
                 <td><?php echo $Budget['Budget']['modified']; ?></td>
+                <td><?php echo $this->Html->link('Editar', array('controller' => 'Budget', 'action' => 'edit', $Budget['Budget']['id'])); ?></td>
+                <td><?php echo $this->Html->link('Remover', array('controller' => 'Budget', 'action' => 'delete', $Budget['Budget']['id'])); ?></td>
             </tr>
         </table>
     </form>

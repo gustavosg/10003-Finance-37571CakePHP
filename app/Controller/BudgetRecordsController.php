@@ -10,7 +10,8 @@
  *
  * @author Gustavo Souza Gonçalves
  */
-class BudgetRecordsController extends AppController{
+class BudgetRecordsController extends AppController {
+
     public $helpers = array('Html', 'Form');
     public $name = 'BudgetRecords';
     public $components = array('Session');
@@ -21,6 +22,10 @@ class BudgetRecordsController extends AppController{
      * Adiciona nova SubCategoria 
      */
     public function add() {
+
+        $this->set('Budgets', $this->BudgetRecord->Budgets->find('list'));
+        $this->set('SubCategory', $this->BudgetRecord->SubCategory->find('list'));
+
         if ($this->request->is('post')) {
             if ($this->BudgetRecord->save($this->request->data)) {
                 $this->Session->setFlash('Seu orçamento foi gravada.');
@@ -34,14 +39,19 @@ class BudgetRecordsController extends AppController{
      * @param type $id 
      */
     public function edit($id = null) {
+        //Alimenta Select List Box 
+        $this->set('Budgets', $this->BudgetRecord->Budgets->find('list'));
+        $this->set('SubCategory', $this->BudgetRecord->SubCategory->find('list'));
+
         $this->BudgetRecord->id = $id;
-        if ($this->request->is('post')) {
-            $this->request->data = $this->BudgetRecord->read();
-        } else {
+
+        if ($this->request->is('post') || $this->request->is('put')) {
             if ($this->BudgetRecord->save($this->request->data)) {
-                $this->Session->setFlash('Sua SubCategoria foi atualizada.');
+                $this->Session->setFlash('Seu Item de Orçamento de ID: '. $id.' foi atualizado.');
                 $this->redirect(array('action' => 'index'));
             }
+        } else {
+            $this->request->data = $this->BudgetRecord->read(null, $id);
         }
     }
 
@@ -55,7 +65,7 @@ class BudgetRecordsController extends AppController{
             $this->request->data = $this->BudgetRecord->read();
         } else {
             if ($this->BudgetRecord->delete($id)) {
-                $this->Session->setFlash('Sua SubCategoria de id: ' . $id . ' foi removida.');
+                $this->Session->setFlash('Seu Item de Orçamento de ID: '. $id.' foi removido.');
                 $this->redirect(array('action' => 'index'));
             }
         }
@@ -65,6 +75,8 @@ class BudgetRecordsController extends AppController{
      * Geração de relatório 
      */
     public function report() {
+        $this->set('Budgets', $this->BudgetRecord->Budgets->find('list'));
+        $this->set('SubCategory', $this->BudgetRecord->SubCategory->find('list'));
         $this->set('BudgetRecords', $this->BudgetRecord->find('all'));
     }
 
@@ -78,8 +90,9 @@ class BudgetRecordsController extends AppController{
     }
 
     public function index() {
-        $this->set('BudgetRecords', $this->BudgetRecord->find('all'));
+        //$this->set('BudgetRecords', $this->BudgetRecord->find('all'));
     }
+
 }
 
 ?>

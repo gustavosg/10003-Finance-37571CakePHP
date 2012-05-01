@@ -11,6 +11,7 @@
  * @author Gustavo Souza Gonçalves
  */
 class BudgetsController extends AppController {
+
     public $helpers = array('Html', 'Form');
     public $name = 'Budgets';
     public $components = array('Session');
@@ -23,7 +24,7 @@ class BudgetsController extends AppController {
     public function add() {
         if ($this->request->is('post')) {
             if ($this->Budget->save($this->request->data)) {
-                $this->Session->setFlash('Seu orçamento foi gravada.');
+                $this->Session->setFlash('Seu orçamento foi gravado.');
                 $this->redirect(array('action' => 'index'));
             }
         }
@@ -35,13 +36,14 @@ class BudgetsController extends AppController {
      */
     public function edit($id = null) {
         $this->Budget->id = $id;
-        if ($this->request->is('post')) {
-            $this->request->data = $this->Budget->read();
-        } else {
+        
+        if ($this->request->is('post') || $this->request->is('put')) {
             if ($this->Budget->save($this->request->data)) {
-                $this->Session->setFlash('Sua SubCategoria foi atualizada.');
+                $this->Session->setFlash('Seu orçamento foi atualizado.');
                 $this->redirect(array('action' => 'index'));
             }
+        } else {
+            $this->request->data = $this->Budget->read(null, $id);
         }
     }
 
@@ -55,7 +57,7 @@ class BudgetsController extends AppController {
             $this->request->data = $this->Budget->read();
         } else {
             if ($this->Budget->delete($id)) {
-                $this->Session->setFlash('Sua SubCategoria de id: ' . $id . ' foi removida.');
+                $this->Session->setFlash('Seu Orçamento de id: ' . $id . ' foi removido.');
                 $this->redirect(array('action' => 'index'));
             }
         }
@@ -80,6 +82,7 @@ class BudgetsController extends AppController {
     public function index() {
         $this->set('Budgets', $this->Budget->find('all'));
     }
+
 }
 
 ?>

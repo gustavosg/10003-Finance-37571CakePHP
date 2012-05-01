@@ -35,6 +35,8 @@
                 <td>Nome:</td>
                 <td>Data de Criação:</td>
                 <td>Data de Modificação:</td>
+                <td>Editar:</td>
+                <td>Remover:</td>
 
             </tr>
             <?php foreach ($Accounts as $account): ?>

@@ -12,6 +12,23 @@
  */
 class BudgetRecord extends AppModel{
     //put your code here
+    
+    public $hasMany = array(
+      'Budgets' => array(
+          'classname' => 'Budget',
+          'conditions' => '',
+          'dependent' => true,
+          'foreignKey' => 'id'
+          
+      ),
+        'SubCategory' => array(
+            'classname' => 'SubCategory',
+            'conditions' => '',
+            'dependent' => true,
+            'foreignKey' => 'id'
+        )
+    );
+    
 }
 
 ?>

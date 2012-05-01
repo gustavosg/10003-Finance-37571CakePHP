@@ -1,10 +1,5 @@
 <?php
 
-/*
- * To change this template, choose Tools | Templates
- * and open the template in the editor.
- */
-
 /**
  * Description of SubSubCategoriesController
  *
@@ -22,6 +17,7 @@ class SubCategoriesController extends AppController {
      * Adiciona nova SubCategoria 
      */
     public function add() {
+        //Alimenta Select List Box com todas as Categorias
         $this->set('Category', $this->SubCategory->Category->find('list'));
 
         if ($this->request->is('post')) {
@@ -38,9 +34,12 @@ class SubCategoriesController extends AppController {
      * @param type $id 
      */
     public function edit($id = null) {
+
+        //Alimenta Select List Box com todas as Categorias
         $this->set('Category', $this->SubCategory->Category->find('list'));
+
         $this->SubCategory->id = $id;
-        
+
         if ($this->request->is('post') || $this->request->is('put')) {
             if ($this->SubCategory->save($this->request->data)) {
                 $this->Session->setFlash('Sua SubCategoria foi atualizada.');
@@ -84,8 +83,11 @@ class SubCategoriesController extends AppController {
         $this->set('SubCategory', $this->SubCategory->read());
     }
 
+    /**
+     * 
+     */
     public function index() {
-        //$this->set('SubCategories', $this->SubCategory->find('all'));
+        
     }
 
 }
