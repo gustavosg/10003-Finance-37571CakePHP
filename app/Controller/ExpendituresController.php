@@ -39,7 +39,7 @@ class ExpendituresController extends AppController {
      * @param type $id 
      */
     public function edit($id = null) {
-            $this->set('SubCategory', $this->Expenditure->SubCategory->find('list', array('fields' => array('SubCategory.id', 'SubCategory.Name'))));
+        $this->set('SubCategory', $this->Expenditure->SubCategory->find('list', array('fields' => array('SubCategory.id', 'SubCategory.Name'))));
         $this->set('Account', $this->Expenditure->Account->find('list', array('fields' => array('Account.id', 'Account.Name'))));
 
         $this->Expenditure->id = $id;
@@ -93,6 +93,26 @@ class ExpendituresController extends AppController {
         
     }
 
+    public function SaldoMes() {
+        $month = 0;
+        for ($month = 1; $month <= 12; $month++) {
+            if (strlen($month) == 1)
+                $month = '0' . $month;
+            $query = "SELECT (SUM(ex.ammount) - SUM(br.ammount)) as total , br.created as data
+						FROM budget_Records br, expenditure ex 
+						where SUBSTRING(br.created, 6, 2) = '" . $month .
+                    "' and SUBSTRING(br.created, 6, 2) = SUBSTRING(ex.created, 6, 2)";
+            $this->set('Expenditure', $this->Expenditure->query($query));
+
+            foreach ($this->Expenditure->query($query) as $records) {
+                $this->set(('Total'), $records[0]['total']);
+                $this->set(('Data'), $records['br']['data']);
+            }
+        }
+    }
+    
+    
+    
 }
 
 ?>

@@ -30,15 +30,15 @@
 
 		<tbody>
 		<tr>
-			<td><a href="relatorioPersonalizado/relatorioTotalPrevisto.php">Total previsto (orçamento)</a></td>
-			<td><a href="relatorioPersonalizado/relatorioGastoMes.php">Valor gasto em um mês/Gasto extratificado por mês</a></td>
+			<td><a href="budgetrecords/TotalPrevisto">Total previsto (orçamento)</a></td>
+			<td><a href="budgetrecords/GastoMes">Valor gasto em um mês/Gasto extratificado por mês</a></td>
 		</tr>
 		<tr>
-			<td><a href="relatorioPersonalizado/relatorioSaldoMes.php">Saldo em determinado mês</a></td>
-			<td><a href="relatorioPersonalizado/relatorioGastoCategoriaMes.php">Gastos por categoria em um determinado mês</a></td>
+			<td><a href="expenditures/SaldoMes">Saldo em determinado mês</a></td>
+			<td><a href="Reports/GastoCategoriaMes">Gastos por categoria em um determinado mês</a></td>
 		</tr>
 		<tr>
-			<td colspan="2" align="center"><a href="relatorioPersonalizado/relatorioGastoContaMes.php">Gastos por conta em um determinado mês</a></td>
+			<td colspan="2" align="center"><a href="Reports/GastoContaMes">Gastos por conta em um determinado mês</a></td>
 		</tr>
 		
 		</tbody>

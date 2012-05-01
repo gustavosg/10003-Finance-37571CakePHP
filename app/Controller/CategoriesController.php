@@ -35,9 +35,8 @@ class CategoriesController extends AppController {
             $this->Category->save($this->request->data);
             $this->Session->setFlash('Sua Categoria foi atualizada.');
             $this->redirect(array('action' => 'index'));
-        } else {
+        } else
             $this->request->data = $this->Category->read(null, $id);
-        }
     }
 
     /**

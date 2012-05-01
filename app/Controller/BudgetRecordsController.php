@@ -47,7 +47,7 @@ class BudgetRecordsController extends AppController {
 
         if ($this->request->is('post') || $this->request->is('put')) {
             if ($this->BudgetRecord->save($this->request->data)) {
-                $this->Session->setFlash('Seu Item de Orçamento de ID: '. $id.' foi atualizado.');
+                $this->Session->setFlash('Seu Item de Orçamento de ID: ' . $id . ' foi atualizado.');
                 $this->redirect(array('action' => 'index'));
             }
         } else {
@@ -65,7 +65,7 @@ class BudgetRecordsController extends AppController {
             $this->request->data = $this->BudgetRecord->read();
         } else {
             if ($this->BudgetRecord->delete($id)) {
-                $this->Session->setFlash('Seu Item de Orçamento de ID: '. $id.' foi removido.');
+                $this->Session->setFlash('Seu Item de Orçamento de ID: ' . $id . ' foi removido.');
                 $this->redirect(array('action' => 'index'));
             }
         }
@@ -91,6 +91,24 @@ class BudgetRecordsController extends AppController {
 
     public function index() {
         //$this->set('BudgetRecords', $this->BudgetRecord->find('all'));
+    }
+
+    public function TotalPrevisto() {
+        $this->set('BudgetRecord', $this->BudgetRecord->query('SELECT SUM(br.ammount) FROM budget_Records AS br'));
+    }
+
+    public function GastoMes() {
+        $month = 0;
+        for ($month = 1; $month <= 12; $month++) {
+            if (strlen($month) == 1)
+                $month = '0' . $month;
+            $query = "'SELECT SUM(br.ammount) as total, br.created as data FROM budget_Records as br where SUBSTRING(br.created, 6, 2) between '".$month."' and '".$month."' ";
+            $this->set('BudgetRecord', $this->BudgetRecord->query($query));
+            foreach ($this->Expenditure->query($query) as $records) {
+                $this->set(('Total'), $records[0]['total']);
+                $this->set(('Data'), $records['br']['data']);
+            }
+        }
     }
 
 }
