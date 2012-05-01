@@ -18,17 +18,17 @@ class Expenditure extends AppModel {
     public $hasMany = array(
         'Account' => array(
             'className' => 'Account',
-            'conditions' => array('account.id' => '') ,
+            'conditions' => '' ,
             'fields' => array('Account' => 'name'),
             'dependent' => true,
-            'foreignKey' => 'account_id'
+            'foreignKey' => 'id'
         ),
         'SubCategory' => array(
             'className' => 'SubCategory',
-            'conditions' => array('sub_category_id.id' => '1'),
+            'conditions' => '',
             'fields' => array('SubCategory' => 'name'),
             'dependent' => true,
-            'foreignKey' => 'sub_category_id'
+            'foreignKey' => 'id'
         )
     );
 }

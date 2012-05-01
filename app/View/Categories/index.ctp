@@ -5,14 +5,7 @@
         <tbody>
             <tr>
                 <td><a href="categories/add">Cadastrar Categoria</a></td>
-                <td><a href="categories/find">Consultar Categoria</a></td>
-            </tr>
-            <tr>
-                <td><a href="categories/edit">Editar Categoria</a></td>
-                <td><a href="categories/delete">Excluir Categoria</a></td>
-            </tr>
-            <tr>
-                <td colspan=2 align="center"><a href="categories/report">Relatório Categoria</a></td>
+                <td><a href="categories/report">Editar/Remover/Listar Categoria</a></td>
             </tr>
         </tbody>
     </table>

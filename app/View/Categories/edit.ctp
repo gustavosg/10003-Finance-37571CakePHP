@@ -6,7 +6,7 @@
 ?>
 
 <body>
-    <form method="post" name="CategoryEditForm" action="edit">
+    <form method="post" name="CategoryEditForm" action="">
         <h1 align="center">Edição de Conta:</h1>
 
         <?php

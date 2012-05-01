@@ -31,13 +31,12 @@ class CategoriesController extends AppController {
      */
     public function edit($id = null) {
         $this->Category->id = $id;
-        if ($this->request->is('post')) {
-            $this->request->data = $this->Category->read();
+        if ($this->request->is('post') || $this->request->is('put')) {
+            $this->Category->save($this->request->data);
+            $this->Session->setFlash('Sua Categoria foi atualizada.');
+            $this->redirect(array('action' => 'index'));
         } else {
-            if ($this->Category->save($this->request->data)) {
-                $this->Session->setFlash('Sua categoria foi atualizada.');
-                $this->redirect(array('action' => 'index'));
-            }
+            $this->request->data = $this->Category->read(null, $id);
         }
     }
 

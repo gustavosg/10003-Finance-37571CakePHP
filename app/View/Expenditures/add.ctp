@@ -8,6 +8,7 @@
         echo $this->Form->input('date', array('label'=>'Data:'));
         echo $this->Form->input('ammount', array('label'=>'Quantia:'));
         echo $this->Form->input('created', array('label'=>'Data de Criação:'));
+        echo $this->Form->input('description', array('label'=>'Descrição:'));
         echo $this->Form->end('Gravar Despesa');
         ?>
     </form>
