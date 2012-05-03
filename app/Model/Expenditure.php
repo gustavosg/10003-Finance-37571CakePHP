@@ -18,7 +18,7 @@ class Expenditure extends AppModel {
     public $hasMany = array(
         'Account' => array(
             'className' => 'Account',
-            'conditions' => '' ,
+            'conditions' => '',
             'fields' => array('Account' => 'name'),
             'dependent' => true,
             'foreignKey' => 'id'
@@ -31,6 +31,7 @@ class Expenditure extends AppModel {
             'foreignKey' => 'id'
         )
     );
+
 }
 
 ?>

@@ -1,7 +1,7 @@
 <body>
 	<h2 align="center">Escolha a operação desejada:</h2>
 
-	<table align="center" >
+	<table align="center" rules="all" border="2" >
 		<thead>
 			<tr>
 				<th colspan="2" style="font-size: x-large;">Opções</th>

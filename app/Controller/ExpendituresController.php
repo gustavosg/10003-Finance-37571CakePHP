@@ -93,7 +93,8 @@ class ExpendituresController extends AppController {
         
     }
 
-    public function SaldoMes() {
+    public function SaldoMes($month = null) {
+        $result = array();
         $month = 0;
         for ($month = 1; $month <= 12; $month++) {
             if (strlen($month) == 1)
@@ -103,16 +104,14 @@ class ExpendituresController extends AppController {
 						where SUBSTRING(br.created, 6, 2) = '" . $month .
                     "' and SUBSTRING(br.created, 6, 2) = SUBSTRING(ex.created, 6, 2)";
             $this->set('Expenditure', $this->Expenditure->query($query));
-
             foreach ($this->Expenditure->query($query) as $records) {
-                $this->set(('Total'), $records[0]['total']);
-                $this->set(('Data'), $records['br']['data']);
+                $result[$month] = $records[0]['total'];
+                $result[$month] = $records['br']['data'];
             }
         }
+        return $result;
     }
-    
-    
-    
+
 }
 
 ?>

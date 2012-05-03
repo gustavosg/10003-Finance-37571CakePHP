@@ -6,12 +6,13 @@
             <td>Data:</td>
         </tr>
         <?php
-        foreach ($Expenditure as $result) {
+        foreach ($BudgetRecord as $result) {
 
             echo "<tr>";
-            echo "<td> R$:" . $Total . "</td>";
-            echo "<td> " . $Data . "</td>";
+            echo "<td> R$:" . $result[0]['total'] . "</td>";
+            echo "<td> " . $result['br']['data'] . "</td>";
             echo "</tr>";
+            print_r($result);
         }
         ?>
     </table>
