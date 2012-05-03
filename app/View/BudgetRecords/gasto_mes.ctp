@@ -8,6 +8,7 @@
         <?php
         foreach ($BudgetRecord as $result) {
 
+            print_r($result);
             echo "<tr>";
             echo "<td> R$:" . $result[0]['total'] . "</td>";
             echo "<td> " . $result['br']['data'] . "</td>";

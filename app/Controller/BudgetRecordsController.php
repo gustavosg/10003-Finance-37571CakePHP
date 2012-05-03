@@ -28,7 +28,7 @@ class BudgetRecordsController extends AppController {
 
         if ($this->request->is('post')) {
             if ($this->BudgetRecord->save($this->request->data)) {
-                $this->Session->setFlash('Seu orçamento foi gravada.');
+                $this->Session->setFlash('Seu orçamento foi gravado.');
                 $this->redirect(array('action' => 'index'));
             }
         }
@@ -103,13 +103,12 @@ class BudgetRecordsController extends AppController {
         for ($month = 1; $month <= 12; $month++) {
             if (strlen($month) == 1)
                 $month = '0' . $month;
-            $query = "SELECT SUM(br.ammount) as total, br.created as data FROM budget_Records as br where SUBSTRING(br.created, 6, 2) between '" . $month . "' and '" . $month."'";
+            $query = "SELECT SUM(br.ammount) as total, br.created as data FROM budget_Records as br where SUBSTRING(br.created, 6, 2) between '" . $month . "' and '" . $month . "'";
             $this->set('BudgetRecord', $this->BudgetRecord->query($query));
             foreach ($this->BudgetRecord->query($query) as $records) {
                 $result[$month] = $records[0]['total'];
                 $result[$month] = $records['br']['data'];
             }
-            $this->set('Tudo', $result);
         }
         return $result;
     }
