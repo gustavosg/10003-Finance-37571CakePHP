@@ -6,16 +6,11 @@
             <td>Data:</td>
         </tr>
         <?php
-        for ($month = 1; $month <= 12; $month++) {
-            if (strlen($month) == 1)
-                $month = '0' . $month;
-
-            foreach ($Expenditure as $result) {
-                echo "<tr>";
-                echo "<td> R$:" . $result[0]['total'] . "</td>";
-                echo "<td> " . $result['br']['data'] . "</td>";
-                echo "</tr>";
-            }
+        foreach ($result as $saldo) {
+            echo "<tr>";
+            echo "<td> R$:" . $saldo[0] . "</td>";
+            echo "<td> " . $saldo[1] . "</td>";
+            echo "</tr>";
         }
         ?>
     </table>

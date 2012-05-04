@@ -82,7 +82,5 @@ class BudgetsController extends AppController {
     public function index() {
         $this->set('Budgets', $this->Budget->find('all'));
     }
-
 }
-
 ?>

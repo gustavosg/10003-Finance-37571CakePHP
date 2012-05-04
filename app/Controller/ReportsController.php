@@ -12,22 +12,7 @@
  */
 class ReportsController extends AppController {
 
-    public function GastoContaMes() {
-        
-    }
-
-    public function GastoCategoriaMes() {
-        
-    }
-
-    public function GastoMes() {
-        
-    }
-
-    public function SaldoMes() {
-        
-    }
-
+    
 
 }
 

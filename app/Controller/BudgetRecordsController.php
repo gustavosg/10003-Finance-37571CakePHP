@@ -106,13 +106,11 @@ class BudgetRecordsController extends AppController {
             $query = "SELECT SUM(br.ammount) as total, br.created as data FROM budget_Records as br where SUBSTRING(br.created, 6, 2) between '" . $month . "' and '" . $month . "'";
             $this->set('BudgetRecord', $this->BudgetRecord->query($query));
             foreach ($this->BudgetRecord->query($query) as $records) {
-                $result[$month] = $records[0]['total'];
-                $result[$month] = $records['br']['data'];
+                $result[$month][0] = $records[0]['total'];
+                $result[$month][1] = $records['br']['data'];
             }
         }
-        return $result;
+        return $this->set('result', $result);
     }
-
 }
-
 ?>

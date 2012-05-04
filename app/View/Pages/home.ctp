@@ -35,10 +35,10 @@
 		</tr>
 		<tr>
 			<td><a href="expenditures/SaldoMes">Saldo em determinado mês</a></td>
-			<td><a href="Reports/GastoCategoriaMes">Gastos por categoria em um determinado mês</a></td>
+			<td><a href="expenditures/GastoCategoriaMes">Gastos por categoria em um determinado mês</a></td>
 		</tr>
 		<tr>
-			<td colspan="2" align="center"><a href="Reports/GastoContaMes">Gastos por conta em um determinado mês</a></td>
+			<td colspan="2" align="center"><a href="expenditures/GastoContaMes">Gastos por conta em um determinado mês</a></td>
 		</tr>
 		
 		</tbody>

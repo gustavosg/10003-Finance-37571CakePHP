@@ -1,19 +1,16 @@
 <body>
-    <h1> Saldo Total</h1>
+    <h1 align="center"> Gasto por mês</h1>
     <table>
         <tr>
             <td>Valor:</td>
             <td>Data:</td>
         </tr>
         <?php
-        foreach ($BudgetRecord as $result) {
-
-            print_r($result);
+        foreach ($result as $gasto) {
             echo "<tr>";
-            echo "<td> R$:" . $result[0]['total'] . "</td>";
-            echo "<td> " . $result['br']['data'] . "</td>";
+            echo "<td> R$:" . $gasto[0] . "</td>";
+            echo "<td> " . $gasto[1] . "</td>";
             echo "</tr>";
-            print_r($result);
         }
         ?>
     </table>

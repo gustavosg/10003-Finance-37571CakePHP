@@ -93,9 +93,8 @@ class ExpendituresController extends AppController {
         
     }
 
-    public function SaldoMes($month = null) {
+    public function SaldoMes() {
         $result = array();
-        $month = 0;
         for ($month = 1; $month <= 12; $month++) {
             if (strlen($month) == 1)
                 $month = '0' . $month;
@@ -105,11 +104,53 @@ class ExpendituresController extends AppController {
                     "' and SUBSTRING(br.created, 6, 2) = SUBSTRING(ex.created, 6, 2)";
             $this->set('Expenditure', $this->Expenditure->query($query));
             foreach ($this->Expenditure->query($query) as $records) {
-                $result[$month] = $records[0]['total'];
-                $result[$month] = $records['br']['data'];
+                $result[$month][0] = $records[0]['total'];
+                $result[$month][1] = $records['br']['data'];
             }
         }
-        return $result;
+        return $this->set('result', $result);
+    }
+
+    public function GastoContaMes() {
+        $result = array();
+        for ($month = 1; $month <= 12; $month++) {
+            if (strlen($month) == 1)
+                $month = '0' . $month;
+            $query = "SELECT EX.account_id, EX.ammount, EX.description, AC.id, AC.name  FROM expenditure EX, accounts AC WHERE month(EX.created) = '" . $month . "'
+                order by AC.name";
+
+            //SELECT EX.account_id, EX.description, AC.id, AC.name  FROM expenditure EX, accounts AC WHERE month(EX.created) = '".$month."'
+            //and EX.account_ID = '".$this->accountId."' and EX.account_id = AC.id"
+
+            $this->set('Expenditure', $this->Expenditure->query($query));
+            foreach ($this->Expenditure->query($query) as $records) {
+                $result[$month][0] = $records['EX']['account_id'];
+                $result[$month][1] = $records['AC']['name'];
+                $result[$month][2] = $records['EX']['ammount'];
+                $result[$month][3] = $records['EX']['description'];
+            }
+        }
+        return $this->set('result', $result);
+    }
+
+    public function GastoCategoriaMes() {
+        $result = array();
+        for ($month = 1; $month <= 12; $month++) {
+            if (strlen($month) == 1)
+                $month = '0' . $month;
+            $query = "SELECT EX.ammount, EX.sub_category_id, EX.description, SBC.category_id, CA.id, CA.name  FROM expenditure EX, 
+			sub_categories SBC, categories CA WHERE month(EX.created) = '" . $month . "' and 
+                            EX.sub_category_id = SBC.id and SBC.category_id = CA.id order by CA.id";
+
+            $this->set('Expenditure', $this->Expenditure->query($query));
+            foreach ($this->Expenditure->query($query) as $records) {
+                $result[$month][0] = $records['CA']['id'];
+                $result[$month][1] = $records['EX']['sub_category_id'];
+                $result[$month][2] = $records['EX']['ammount'];
+                $result[$month][3] = $records['EX']['description'];
+            }
+        }
+        return $this->set('result', $result);
     }
 
 }
