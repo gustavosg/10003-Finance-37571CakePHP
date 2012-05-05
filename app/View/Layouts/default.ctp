@@ -24,36 +24,53 @@ $title = __d('cake_dev', 'Sistema Finance-37571 com CakePHP');
             </div>
             <div id="content">
 
-                <div id="leftfloat">
+                <div id="navigation">
                     <h3>Acesso Rapido:</h1>
                         <ul>
+
                             <li/>
-                            <a href="accounts"> Contas</a>
+                            <a href="/Finance-37571CakePHP/"> Página Inicial</a>
+
                             <li/>
-                            <a href="categories">Categorias</a>
+                            <a href="/Finance-37571CakePHP/accounts"> Contas</a>
                             <li/>
-                            <a href="subcategories">Sub-Categorias</a>
+                            <a href="/Finance-37571CakePHP/categories">Categorias</a>
                             <li/>
-                            <a href="expenditures">Despesas</a>
+                            <a href="/Finance-37571CakePHP/subcategories">Sub-Categorias</a>
                             <li/>
-                            <a href="budgets">Orçamentos</a>
+                            <a href="/Finance-37571CakePHP/expenditures">Despesas</a>
                             <li/>
-                            <a href="budgetrecords">Items de Orçamentos</a>
+                            <a href="/Finance-37571CakePHP/budgets">Orçamentos</a>
+                            <li/>
+                            <a href="/Finance-37571CakePHP/budgetrecords">Items de Orçamentos</a>
+
+                            <h3>Relatórios Personalizados:</h3>
+                            <li/>
+                            <a href="/Finance-37571CakePHP/budgetrecords/TotalPrevisto">Total previsto (orçamento)</a>
+
+                            <li/>
+                            <a href="/Finance-37571CakePHP/budgetrecords/GastoMes">Valor gasto em um mês/Gasto extratificado por mês</a>
+                            <li/>
+                            <a href="/Finance-37571CakePHP/expenditures/SaldoMes">Saldo em determinado mês</a>
+                            <li/>	
+                            <a href="/Finance-37571CakePHP/expenditures/GastoCategoriaMes">Gastos por categoria em um determinado mês</a>
+
+                            <li/>
+                            <a href="/Finance-37571CakePHP/expenditures/GastoContaMes">Gastos por conta em um determinado mês</a>
+
                         </ul>
                 </div>
-
-
                 <div id="window">
+                    <br>
 
-                    <?php echo $this->Session->flash(); ?>
-
-                    <?php echo $this->fetch('content'); ?>
+                        <?php echo $this->Session->flash(); ?>
+                        <?php echo $this->fetch('content'); ?>
                 </div>
             </div>
             <div id="footer">
 
                 <?php
-                echo "<footer style='position: fixed; right: 3px; bottom: 0px;'>
+                echo "<footer >
 			Gustavo Souza Gonçalves - 37571 <br> Marco Aurélio D. Acaroni - 38441 <br>
 			PUC Minas - 2011-2012
 			</footer>";

@@ -1,10 +1,10 @@
 <table>
     <tr>
-        <td>id</td>
-        <td>Nome:</td>
-        <td>Categoria:</td>
-        <td>Data de Criação:</td>
-        <td>Data de Modificação:</td>
+        <th>id</th>
+        <th>Nome:</th>
+        <th>Categoria:</th>
+        <th>Data de Criação:</th>
+        <th>Data de Modificação:</th>
     </tr>
     <tr>
         <td><?php echo $SubCategory['SubCategory']['id']; ?></td>

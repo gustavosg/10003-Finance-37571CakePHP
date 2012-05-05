@@ -1,6 +1,6 @@
 <body>
     <form id="ExpenditureForm" method="post" action="add">
-        <h1 align="center">Entre com as informações:</h1>
+        <h2 align="center">Entre com as informações:</h2>
         <?php
         echo $this->Form->create('Expenditure');
         echo $this->Form->input('sub_category_id', array('options' => $SubCategory, 'class' => 'SubCategory', 'type'=>'select', 'label'=>'Sub Categoria:'));

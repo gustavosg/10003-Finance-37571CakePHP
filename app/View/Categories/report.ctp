@@ -1,6 +1,6 @@
 <body>
 
-    <h1 align="center">Categorias Cadastradas:</h1>
+    <h2 align="center">Categorias Cadastradas:</h2>
     <table>
         <tr>
             <td>id</td>

@@ -1,7 +1,8 @@
 <!DOCTYPE html>
 <body>
-    <h1>Escolha uma operação:</h1>
+    
     <table align="center" border=2>
+        <th colspan="2" />Escolha uma operação:
         <tbody>
             <tr>
                 <td><a href="expenditures/add">Cadastrar Despesa</a></td>

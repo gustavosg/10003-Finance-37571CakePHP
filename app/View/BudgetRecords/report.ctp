@@ -1,15 +1,15 @@
 <body>
-    <h1 align="center">Items de Orçamento Cadastrados:</h1>
-    <table>
+    <h2 align="center">Items de Orçamento Cadastrados:</h2>
+    <table align="center">
         <tr>
-            <td>Id:</td>
-            <td>Id Orçamento:</td>
-            <td>Quantia:</td>
-            <td>Id SubCategoria:</td>
-            <td>Data de Criação:</td>
-            <td>Data de Modificação:</td>
-            <td>Editar:</td>
-            <td>Remover:</td>
+            <th>Id:</th>
+            <th>Id Orçamento:</th>
+            <th>Quantia:</th>
+            <th>Id SubCategoria:</th>
+            <th>Data de Criação:</th>
+            <th>Data de Modificação:</th>
+            <th>Editar:</th>
+            <th>Remover:</th>
         </tr>
         <?php foreach ($BudgetRecords as $BudgetRecord): ?>
             <tr>

@@ -1,5 +1,5 @@
 <body>
-    <h1 align="center">Despesas Cadastradas:</h1>
+    <h2 align="center">Despesas Cadastradas:</h2>
     <table>
         <tr>
             <td>id</td>

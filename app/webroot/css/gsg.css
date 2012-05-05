@@ -3,7 +3,7 @@
     Created on : 04/05/2012, 01:05:46
     Author     : Gustavo
     Description:
-        Purpose of the stylesheet follows.
+    Purpose of the stylesheet follows.
 */
 
 root { 
@@ -12,16 +12,56 @@ root {
 
 body{
     font: 76% arial,sans-serif;text-align:justify;
-    background: lightgray;
-
+    background: #f8f7e5 url(background.jpg) content-box center top;
+    
 }
 
-text{
+footer{
+    position: fixed; 
+    right: 3px; 
+    bottom: 0px;
+    text-align: center;
     color: black;
+    font-size: 140%;
+    background: white;
+    border-radius: 20px;
+    min-height: 65px;
+    min-width: 380px;
 }
 
-link{
+table{
+    text-align: center;
+    font-style: normal;
+    font-family: sans-serif;
     color: black;
+    border: 2px solid black;
+    border-collapse:collapse;
+    table-layout: auto;
+    border-color: black;
+    table-layout: fixed;
+    min-height: 700px;
+    min-width: 1000px;
+}
+
+td{
+    font-size:1em;
+    border:2px solid gray;
+    padding:5px 5px 5px 5px;
+    background-color:#EAF2D3;
+}
+
+tr.alt td {
+    color:#000000;
+    background-color:white;
+}
+th 
+{
+    font-size:1.5em;
+    text-align:center;
+    padding-top:5px;
+    padding-bottom:4px;
+    background-color:#A7C942;
+    color:#ffffff;
 }
 
 h1 {
@@ -33,9 +73,7 @@ h1 {
     text-align: center;
 }
 
-h2{
-    
-}
+h2{ text-align: center;}
 
 h3{
     padding: 6px;
@@ -47,97 +85,31 @@ li {
     font-weight: bold;
 }
 
-label{
-    color:black;
-}
-
-footer{
-    color: black;
-    background: white;
-    font-size: 120%;
-    -moz-border-radius: 0.5em;
-    -moz-box-align: center;
-}
-
-table{
-    font-style: normal;
-    font-family: sans-serif;
-    color: black;
-
-}
-
-p{
-    margin:0 10px 10px;
-}
-
 a{
     padding:5px; 
     text-decoration:none; 
-    color:#000000;
+    color: blue;
 }
 
-div#leftfloat{
+p{margin:0 10px 10px;}
+
+div#navigation {
     background: white;
     border: 2px;
     border-color: black;
-        min-height: 640px;
+    min-height: 640px;
     border-bottom-left-radius: 4em;
     border-top-left-radius: 4em;
     float: left;
 }
 
-div#container {
-    text-align:left;
-}
-
-div#navigation {
-    background:#F6F0E0;
-}
-
-div#navigation ul{
-    margin:15px 0; 
-    padding:0; 
-    list-style-type:none;
-}
-
-div#navigation li{
-    margin-bottom:5px;
-}
-
-div#navigation {
-    float:left;
-    width:150px;
-    margin-left:-700px;
-}
-div#extra
-{
-    float:left;
-    width:150px;
-    margin-left:-150px;
-}
-div#footer{
-    clear:left;
-    width:100%;
-
-}
-
 div#window{
     float: center;
-    
     background: white;
-    
-    
     border-bottom-left-radius: 4em;
     border-top-left-radius: 4em;
     border-bottom-right-radius: 4em;
     border-top-right-radius: 4em;
     min-height: 640px;
     min-width: 700px;
-    
-    
-}
-
-link
-{
-    background: white;
 }

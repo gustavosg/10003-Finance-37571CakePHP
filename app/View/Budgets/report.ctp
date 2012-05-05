@@ -1,13 +1,13 @@
 <body>
-    <h1 align="center">Orçamentos Cadastrados:</h1>
-    <table>
+    <h2 align="center">Orçamentos Cadastrados:</h2>
+    <table align="center">
         <tr>
-            <td>id</td>
-            <td>Nome:</td>
-            <td>Data de Criação:</td>
-            <td>Data de Modificação:</td>
-            <td>Editar:</td>
-            <td>Remover:</td>
+            <th>id</th>
+            <th>Nome:</th>
+            <th>Data de Criação:</th>
+            <th>Data de Modificação:</th>
+            <th>Editar:</th>
+            <th>Remover:</th>
 
         </tr>
         <?php foreach ($Budgets as $Budget): ?>

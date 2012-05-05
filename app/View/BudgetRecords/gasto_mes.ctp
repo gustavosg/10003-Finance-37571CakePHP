@@ -1,10 +1,8 @@
 <body>
-    <h1 align="center"> Gasto por mês</h1>
-    <table>
-        <tr>
-            <td>Valor:</td>
-            <td>Data:</td>
-        </tr>
+    <h2 align="center"> Gasto por mês</h2>
+    <table align="center">
+            <th>Valor:</th>
+            <th>Data:</th>
         <?php
         foreach ($result as $gasto) {
             echo "<tr>";

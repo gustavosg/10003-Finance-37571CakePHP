@@ -1,10 +1,8 @@
 <body>
-    <h1 align="center"> Saldo Total</h1>
+    <h2 align="center"> Saldo Total</h2>
     <table align="center" border="2" rules="All">
-        <tr>
-            <td>Valor:</td>
-            <td>Data:</td>
-        </tr>
+        <th>Valor:</th>
+        <th>Data:</th>
         <?php
         foreach ($result as $saldo) {
             echo "<tr>";

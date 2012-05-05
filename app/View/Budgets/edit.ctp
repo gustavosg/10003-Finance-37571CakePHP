@@ -7,7 +7,7 @@
 
 <body>
     <form method="post" name="BudgetEditForm" action="">
-        <h1 align="center">Edição de Conta:</h1>
+        <h2 align="center">Edição de Conta:</h2>
         <?php
         echo $this->Form->create('Budget', array('action' => 'edit'));
         echo $this->Form->input('name');

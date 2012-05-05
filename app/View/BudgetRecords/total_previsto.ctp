@@ -1,5 +1,5 @@
 <body>
-    <h1 align="center">Total Previsto:</h1>
+    <h2 align="center">Total Previsto:</h2>
     <p align="center">
         <?php
         foreach ($BudgetRecord as $records)

@@ -1,11 +1,11 @@
 <body>
-    <h1 align="center"> Gasto Total</h1>
+    <h2 align="center"> Gasto Total</h2>
     <table align="center" border="2" rules="All">
         <tr>
-            <td>ID:</td>
-            <td>Conta:</td>
-            <td>Valor:</td>
-            <td>Descrição:</td>
+            <th>ID:</th>
+            <th>Conta:</th>
+            <th>Valor:</th>
+            <th>Descrição:</th>
         </tr>
         <?php
         foreach ($result as $gasto) {
