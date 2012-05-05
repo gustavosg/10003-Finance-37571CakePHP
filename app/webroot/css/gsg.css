@@ -1,0 +1,143 @@
+/* 
+    Document   : gsg
+    Created on : 04/05/2012, 01:05:46
+    Author     : Gustavo
+    Description:
+        Purpose of the stylesheet follows.
+*/
+
+root { 
+    display: block;
+}
+
+body{
+    font: 76% arial,sans-serif;text-align:justify;
+    background: lightgray;
+
+}
+
+text{
+    color: black;
+}
+
+link{
+    color: black;
+}
+
+h1 {
+    -moz-animation: alternate;
+    -moz-border-radius: 20px;
+    font-family: serif;
+    color: black;
+    background: white;
+    text-align: center;
+}
+
+h2{
+    
+}
+
+h3{
+    padding: 6px;
+    text-align: center;
+}
+
+li {
+    font-size: 12px;
+    font-weight: bold;
+}
+
+label{
+    color:black;
+}
+
+footer{
+    color: black;
+    background: white;
+    font-size: 120%;
+    -moz-border-radius: 0.5em;
+    -moz-box-align: center;
+}
+
+table{
+    font-style: normal;
+    font-family: sans-serif;
+    color: black;
+
+}
+
+p{
+    margin:0 10px 10px;
+}
+
+a{
+    padding:5px; 
+    text-decoration:none; 
+    color:#000000;
+}
+
+div#leftfloat{
+    background: white;
+    border: 2px;
+    border-color: black;
+        min-height: 640px;
+    border-bottom-left-radius: 4em;
+    border-top-left-radius: 4em;
+    float: left;
+}
+
+div#container {
+    text-align:left;
+}
+
+div#navigation {
+    background:#F6F0E0;
+}
+
+div#navigation ul{
+    margin:15px 0; 
+    padding:0; 
+    list-style-type:none;
+}
+
+div#navigation li{
+    margin-bottom:5px;
+}
+
+div#navigation {
+    float:left;
+    width:150px;
+    margin-left:-700px;
+}
+div#extra
+{
+    float:left;
+    width:150px;
+    margin-left:-150px;
+}
+div#footer{
+    clear:left;
+    width:100%;
+
+}
+
+div#window{
+    float: center;
+    
+    background: white;
+    
+    
+    border-bottom-left-radius: 4em;
+    border-top-left-radius: 4em;
+    border-bottom-right-radius: 4em;
+    border-top-right-radius: 4em;
+    min-height: 640px;
+    min-width: 700px;
+    
+    
+}
+
+link
+{
+    background: white;
+}

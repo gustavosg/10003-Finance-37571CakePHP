@@ -9,7 +9,7 @@
             echo $this->Form->create('Account');
             echo $this->Form->input('name');
             echo $this->Form->input('created');
-            
+            echo $this->Form->hidden('modified');
             echo $this->Form->end('Gravar conta');
             ?>
         </form>

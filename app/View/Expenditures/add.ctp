@@ -9,6 +9,7 @@
         echo $this->Form->input('ammount', array('label'=>'Quantia:'));
         echo $this->Form->input('created', array('label'=>'Data de Criação:'));
         echo $this->Form->input('description', array('label'=>'Descrição:'));
+        echo $this->Form->hidden('modified');
         echo $this->Form->end('Gravar Despesa');
         ?>
     </form>
