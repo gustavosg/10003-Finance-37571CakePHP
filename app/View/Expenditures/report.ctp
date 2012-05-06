@@ -1,17 +1,17 @@
 <body>
     <h2 align="center">Despesas Cadastradas:</h2>
-    <table>
+    <table align="center">
         <tr>
-            <td>id</td>
-            <td>ID SubCategoria:</td>
-            <td>ID Conta:</td>
-            <td>Quantia:</td>
-            <td>Data:</td>
-            <td>Data de Criação:</td>
-            <td>Data de Modificação:</td>
-            <td>Descrição:</td>
-            <td>Editar:</td>
-            <td>Remover:</td>
+            <th>id</th>
+            <th>ID SubCategoria:</th>
+            <th>ID Conta:</th>
+            <th>Quantia:</th>
+            <th>Data:</th>
+            <th>Data de Criação:</th>
+            <th>Data de Modificação:</th>
+            <th>Descrição:</th>
+            <th>Editar:</th>
+            <th>Remover:</th>
 
         </tr>
         <?php foreach ($Expenditures as $Expenditure): ?>

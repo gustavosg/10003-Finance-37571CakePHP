@@ -8,11 +8,9 @@ class Account extends AppModel {
     public $name = 'Account';
     public $validate = array(
         'name' => array(
-            'alphaNumeric' => array(
-                'rule' => 'alphaNumeric',
-                'required' => true,
-                'message' => 'Informe o nome!'
-            )
+            'rule' => 'notEmpty',
+            'required' => true,
+            'message' => 'Informe o nome!'
         )
     );
 

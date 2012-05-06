@@ -40,11 +40,9 @@ class Expenditure extends AppModel {
             )
         ),
         'description' => array(
-            'alphaNumeric' => array(
-                'rule' => 'alphaNumeric',
-                'required' => true,
-                'message' => 'Informe uma descrição!'
-            )
+            'rule' => 'notEmpty',
+            'required' => true,
+            'message' => 'Informe uma descrição!'
         ),
     );
 

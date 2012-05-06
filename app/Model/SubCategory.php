@@ -19,11 +19,9 @@ class SubCategory extends AppModel {
     );
     public $validate = array(
         'name' => array(
-            'alphaNumeric' => array(
-                'rule' => 'alphaNumeric',
-                'required' => true,
-                'message' => 'Informe o nome!'
-            )
+            'rule' => 'notEmpty',
+            'required' => true,
+            'message' => 'Informe o nome!'
         )
     );
 
