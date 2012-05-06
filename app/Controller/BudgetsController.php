@@ -8,7 +8,7 @@
 /**
  * Description of Budgets
  *
- * @author Gustavo Souza Gonçalves
+ * 
  */
 class BudgetsController extends AppController {
 

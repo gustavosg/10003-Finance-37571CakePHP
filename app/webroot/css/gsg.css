@@ -13,17 +13,15 @@ root {
 body{
     font: 76% arial,sans-serif;text-align:justify;
     background: #f8f7e5 url(background.jpg) content-box center top;
-    
+
 }
 
-footer{
+#authors{
     position: fixed; 
-    right: 3px; 
-    bottom: 0px;
+    left: 3px; 
     text-align: center;
     color: black;
     font-size: 140%;
-    background: white;
     border-radius: 20px;
     min-height: 65px;
     min-width: 380px;
@@ -40,7 +38,7 @@ table{
     border-color: black;
     table-layout: fixed;
     min-height: 700px;
-    min-width: 1000px;
+    min-width: 800px;
 }
 
 td{
@@ -97,7 +95,7 @@ div#navigation {
     background: white;
     border: 2px;
     border-color: black;
-    min-height: 640px;
+    min-height: 560px;
     border-bottom-left-radius: 4em;
     border-top-left-radius: 4em;
     float: left;
@@ -110,6 +108,6 @@ div#window{
     border-top-left-radius: 4em;
     border-bottom-right-radius: 4em;
     border-top-right-radius: 4em;
-    min-height: 640px;
+    min-height: 560px;
     min-width: 700px;
 }

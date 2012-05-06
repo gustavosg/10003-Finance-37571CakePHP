@@ -8,7 +8,6 @@
 /**
  * Description of BudgetRecordRecordsController
  *
- * @author Gustavo Souza Gonçalves
  */
 class BudgetRecordsController extends AppController {
 

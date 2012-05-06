@@ -6,7 +6,7 @@
 
 /**
  *
- * @author Gustavo Souza Gonçalves
+ * 
  */
 ?>
 

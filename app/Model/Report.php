@@ -8,7 +8,7 @@
 /**
  * Description of Report
  *
- * @author Gustavo Souza Gonçalves
+ * 
  */
 class Report extends AppModel {
 

@@ -1,17 +1,22 @@
 <?php
 
-/*
- * To change this template, choose Tools | Templates
- * and open the template in the editor.
- */
-
 /**
- * Description of Budget
+ * Classe Model para Budget
  *
- * @author Gustavo Souza Gonçalves
  */
-class Budget extends AppModel{
-    //put your code here
+class Budget extends AppModel {
+
+    public $name = 'Budget';
+    public $validate = array(
+        'name' => array(
+            'alphaNumeric' => array(
+                'rule' => 'alphaNumeric',
+                'required' => true,
+                'message' => 'Informe o nome!'
+            )
+        )
+    );
+
 }
 
 ?>

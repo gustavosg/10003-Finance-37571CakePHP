@@ -8,7 +8,7 @@
 /**
  * Description of Expenditure
  *
- * @author Gustavo Souza Gonçalves
+ * 
  */
 class Expenditure extends AppModel {
 
@@ -30,6 +30,22 @@ class Expenditure extends AppModel {
             'dependent' => true,
             'foreignKey' => 'id'
         )
+    );
+    public $validate = array(
+        'ammount' => array(
+            'numeric' => array(
+                'rule' => 'numeric',
+                'required' => true,
+                'message' => 'Informe a quantia!'
+            )
+        ),
+        'description' => array(
+            'alphaNumeric' => array(
+                'rule' => 'alphaNumeric',
+                'required' => true,
+                'message' => 'Informe uma descrição!'
+            )
+        ),
     );
 
 }

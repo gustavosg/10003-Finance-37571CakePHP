@@ -3,15 +3,12 @@
 /**
  * Description of AccountsController
  *
- * @author Gustavo Souza Gonçalves
  */
 class AccountsController extends AppController {
 
     public $helpers = array('Html', 'Form');
     public $name = 'Accounts';
     public $components = array('Session');
-
-    // TODO Gustavo: Como salvar campo modified = null
 
     /**
      * Adiciona nova conta 

@@ -3,7 +3,7 @@
 /**
  * Description of SubSubCategoriesController
  *
- * @author Gustavo Souza Gonçalves
+ * 
  */
 class SubCategoriesController extends AppController {
 

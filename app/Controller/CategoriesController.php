@@ -3,7 +3,7 @@
 /**
  * Description of CategoriesController
  *
- * @author Gustavo Souza Gonçalves
+ * 
  */
 class CategoriesController extends AppController {
 

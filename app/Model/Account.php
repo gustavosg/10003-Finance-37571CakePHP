@@ -1,19 +1,21 @@
 <?php
 
-/*
- * To change this template, choose Tools | Templates
- * and open the template in the editor.
- */
-
 /**
- * Description of Account
- *
- * @author Gustavo Souza Gonçalves
+ * Classe Model para Account 
  */
-class Account extends AppModel{
-    //put your code here
+class Account extends AppModel {
+
     public $name = 'Account';
-    
+    public $validate = array(
+        'name' => array(
+            'alphaNumeric' => array(
+                'rule' => 'alphaNumeric',
+                'required' => true,
+                'message' => 'Informe o nome!'
+            )
+        )
+    );
+
 }
 
 ?>

@@ -1,14 +1,9 @@
 <?php
 
-/*
- * To change this template, choose Tools | Templates
- * and open the template in the editor.
- */
-
 /**
- * Description of SubCategory
+ * Classe Model para SubCategory
  *
- * @author Gustavo Souza Gonçalves
+ * 
  */
 class SubCategory extends AppModel {
 
@@ -20,6 +15,15 @@ class SubCategory extends AppModel {
             'conditions' => '',
             'dependent' => true,
             'foreignKey' => 'id'
+        )
+    );
+    public $validate = array(
+        'name' => array(
+            'alphaNumeric' => array(
+                'rule' => 'alphaNumeric',
+                'required' => true,
+                'message' => 'Informe o nome!'
+            )
         )
     );
 

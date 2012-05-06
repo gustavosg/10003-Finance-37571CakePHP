@@ -8,7 +8,7 @@
 /**
  * Description of ExpendituresController
  *
- * @author Gustavo Souza Gonçalves
+ * 
  */
 class ExpendituresController extends AppController {
 

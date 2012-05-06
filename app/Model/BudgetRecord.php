@@ -1,26 +1,21 @@
 <?php
 
-/*
- * To change this template, choose Tools | Templates
- * and open the template in the editor.
- */
-
 /**
- * Description of BudgetRecord
+ * Classe Model para BudgetsRecord
  *
- * @author Gustavo Souza Gonçalves
+ * 
  */
-class BudgetRecord extends AppModel{
+class BudgetRecord extends AppModel {
+
     //put your code here
-    
+    public $name = "BudgetRecord";
     public $hasMany = array(
-      'Budgets' => array(
-          'classname' => 'Budget',
-          'conditions' => '',
-          'dependent' => true,
-          'foreignKey' => 'id'
-          
-      ),
+        'Budgets' => array(
+            'classname' => 'Budget',
+            'conditions' => '',
+            'dependent' => true,
+            'foreignKey' => 'id'
+        ),
         'SubCategory' => array(
             'classname' => 'SubCategory',
             'conditions' => '',
@@ -28,7 +23,16 @@ class BudgetRecord extends AppModel{
             'foreignKey' => 'id'
         )
     );
-    
+    public $validate = array(
+        'ammount' => array(
+            'numeric' => array(
+                'rule' => 'numeric',
+                'required' => true,
+                'message' => 'Informe a quantia!'
+            )
+        )
+    );
+
 }
 
 ?>

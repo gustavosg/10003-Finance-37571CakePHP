@@ -59,6 +59,15 @@ $title = __d('cake_dev', 'Sistema Finance-37571 com CakePHP');
                             <a href="/Finance-37571CakePHP/expenditures/GastoContaMes">Gastos por conta em um determinado mês</a>
 
                         </ul>
+
+                        <?php
+                        echo "<div id='authors' >
+                        Autores:<br>
+			Gustavo Souza Gonçalves - 37571 <br> Marco Aurélio D. Acaroni - 38441 <br>
+			PUC Minas - 2011-2012
+			</div>";
+                        ?>
+
                 </div>
                 <div id="window">
                     <br>
@@ -69,12 +78,7 @@ $title = __d('cake_dev', 'Sistema Finance-37571 com CakePHP');
             </div>
             <div id="footer">
 
-                <?php
-                echo "<footer >
-			Gustavo Souza Gonçalves - 37571 <br> Marco Aurélio D. Acaroni - 38441 <br>
-			PUC Minas - 2011-2012
-			</footer>";
-                ?>
+
 
                 <?php
 //                        echo $this->Html->link(

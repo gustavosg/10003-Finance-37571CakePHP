@@ -2,6 +2,6 @@
 
 /**
  *
- * @author Gustavo Souza Gonçalves
+ * 
  */
 ?>
